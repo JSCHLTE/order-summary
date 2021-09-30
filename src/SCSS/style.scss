@@ -1,0 +1,145 @@
+//Variables
+$pale-blue: hsl(225, 100%, 94%);
+$bright-blue: hsl(245, 75%, 52%);
+$very-pale-blue: hsl(225, 100%, 98%);
+$desat-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+$white: #fff;
+//font-vars
+$redhat: 'Red Hat Display', sans-serif;
+//Globals
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: $redhat;
+    background: url(../../Images/pattern-background-desktop.svg) $pale-blue;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @media(max-width: 59rem) {
+        background: url(../../Images/pattern-background-mobile.svg) $pale-blue;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+//Styles
+
+.order-card { //All order-card styles
+    overflow: hidden;
+    text-align: center;
+    border-radius: 1rem;
+    background: $white;
+    max-width: 400px;
+    min-width: 320px;
+    margin: 0 50px;
+
+    .order-img {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+
+    .order-info {
+        margin: 1.2rem 0 0.5rem;
+        padding: 0 1rem;
+        h2 {
+            margin: 0 0 1rem 0;
+            color: $dark-blue;
+        }
+        p {
+            color: $desat-blue;
+        }
+    }
+
+    .order-plan {
+        margin: 1.5rem 5px;
+        background: $very-pale-blue;
+        border-radius: 10px;
+        display: flex;
+
+        .order-plan-img {
+            margin: 1rem;
+        }
+
+        .order-plan-text {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            padding: 0 10px;
+
+            .order-plan-text-flex {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                .order-plan-text-title{
+                    color: $dark-blue;
+                    font-weight: 900;
+                    font-size: 12pt;
+                    margin-bottom: 5px;
+                }
+                .order-plan-text-price{
+                    color: $desat-blue;
+                    font-size: 11pt;
+                    margin-bottom: 5px;
+                }
+            }
+            .order-plan-text-link {
+                color: $bright-blue;
+                font-weight: 700;
+                margin-right: 10px;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .order-buttons{
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .order-buttons-proceed {
+            width: 90%;
+            padding: 10px 0;
+            border-radius: 5px;
+            color: $white;
+            background: $bright-blue;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+            &:hover {
+                box-shadow: 0px 10px 10px hsla(245, 75%, 52%, 0.3);
+            }
+        }
+        .order-buttons-cancel {
+            color: $desat-blue;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
